@@ -96,8 +96,8 @@ h2{font-size:clamp(30px,5vw,48px);margin-bottom:14px}
 .nut div{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:10px 4px}
 .nut b{display:block;font-size:20px;color:var(--accent)}
 .nut span{font-size:11px;color:var(--muted)}
-.bar{display:flex;height:8px;border-radius:99px;overflow:hidden;gap:2px}
-.bar i{display:block;height:100%;transition:width .4s}
+.macro{display:flex;height:8px;border-radius:99px;overflow:hidden;gap:2px}
+.macro i{display:block;height:100%;transition:width .4s}
 #bP{background:#6b8f4e}#bF{background:#d9a43a}#bC{background:#c2491d}
 .mbody .note{margin-top:8px;font-size:12px}
 @media (prefers-reduced-motion:reduce){.mbox,.modal{transition:none}}
@@ -246,7 +246,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
     <div><b id="mF"></b><span>жиры, г</span></div>
     <div><b id="mC"></b><span>углеводы, г</span></div>
    </div>
-   <div class="bar"><i id="bP"></i><i id="bF"></i><i id="bC"></i></div>
+   <div class="macro"><i id="bP"></i><i id="bF"></i><i id="bC"></i></div>
    <p class="note">Доля калорий: <span style="color:#6b8f4e">белки</span> · <span style="color:#d9a43a">жиры</span> · <span style="color:#c2491d">углеводы</span></p>
    <p class="note">Порция <span id="mW"></span>.</p>
   </div>
@@ -305,7 +305,7 @@ function show(c){
 }
 cats.forEach(function(c){var b=document.createElement("button");b.className="tab";b.type="button";b.dataset.c=c;b.setAttribute("role","tab");b.textContent=c;b.onclick=function(){show(c)};tabs.appendChild(b)});
 var OFF={},N=0;cats.forEach(function(c){OFF[c]=N;N+=MENU[c].length});buildGal();show(cats[0]);
-var hero=document.querySelector(".hero");hero.style.background="linear-gradient(90deg,rgba(14,10,7,.9),rgba(14,10,7,.45)),url("+IMG["place-1"]+") center/cover no-repeat";
+var hero=document.querySelector(".hero");hero.style.background="linear-gradient(90deg,rgba(14,10,7,.9),rgba(14,10,7,.45)),url("+IMG["place-1"]+") center/cover no-repeat var(--hero)";
 
 var nav=document.getElementById("nav"),burger=document.getElementById("burger");
 burger.onclick=function(){var o=nav.classList.toggle("open");burger.setAttribute("aria-expanded",o)};
